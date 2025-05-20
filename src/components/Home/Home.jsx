@@ -34,18 +34,18 @@ export default function Home() {
 
           <div className='mt-8'>
             <p className='text-gray-500 mb-4'>¡Regístrate para probarlo!</p>
-            <div className='flex flex-col sm:flex-row gap-4'>
-              <SignInButton mode='modal'>
-                <button className="bg-white hover:bg-gray-50 text-indigo-600 font-medium py-3 px-6 rounded-lg border border-indigo-200 shadow-sm transition-all hover:shadow-md">
-                  Iniciar Sesión
-                </button>
-              </SignInButton>
-              <SignUpButton mode='modal'>
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition-all hover:shadow-md">
-                  Regístrate Gratis
-                </button>
-              </SignUpButton>
-            </div>
+              <div className='flex flex-col sm:flex-row gap-4'>
+                <SignInButton mode='modal'>
+                  <button className="bg-white hover:bg-gray-50 text-indigo-600 font-medium py-3 px-6 rounded-lg border border-indigo-200 shadow-sm transition-all hover:shadow-md">
+                    Iniciar Sesión
+                  </button>
+                </SignInButton>
+                <SignUpButton mode='modal'>
+                  <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-lg shadow-sm transition-all hover:shadow-md">
+                    Regístrate Gratis
+                  </button>
+                </SignUpButton>
+              </div>
           </div>
         </div>
         
