@@ -1,12 +1,3 @@
 [build]
   command = "npm run build"
-  publish = "dist"  # Vite usa 'dist' por defecto en lugar de 'build'
-  environment = { NODE_VERSION = "18.16.0" }
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[dev]
-  framework = "vite"
+  publish = "dist"
