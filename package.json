@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.31.2",
+    "@clerk/localizations": "^3.16.1",
     "@heroicons/react": "^2.2.0",
     "dotenv": "^16.5.0",
     "file-saver": "^2.0.5",

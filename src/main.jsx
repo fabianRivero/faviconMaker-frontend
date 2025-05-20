@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { EditorImageProvider } from './components/contexts/EditorImageContext.jsx'
 import App from './App.jsx'
 import "./main.css";
+import { esES } from '@clerk/localizations'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -14,7 +15,7 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
+    <ClerkProvider localization={esES} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
       <BrowserRouter>
       <EditorImageProvider>
         <App />
