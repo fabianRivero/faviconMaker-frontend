@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContainer{
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.mainTitle{
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.uploadedImage{
+    width: 33px;
+    object-fit: contain;
+    border-radius: 10px; 
+}
+
+
+.previewContainer{
+    margin-top: 20px;
+}
+
+.previewContainer p {
+    margin-bottom: 20px;
+}
+
