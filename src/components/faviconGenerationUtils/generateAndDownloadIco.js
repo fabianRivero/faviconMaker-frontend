@@ -44,6 +44,7 @@ export default async function generateAndDownloadIco(favicons, getToken) {
       URL.revokeObjectURL(url);
     }, 100);
   } catch (error) {
+    ;
     throw error;
   }
 }

@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
       
       <div className='container mx-auto px-4 h-full xl:grid xl:grid-cols-[1fr_1fr] xl:gap-11'>
-        <div className='flex flex-col justify-center py-20 gap-6'>
+        <div className='flex flex-col justify-center py-20 gap-6 xl:ml-[50px] xl:mt-[10vh] xxl:mt-[15vh]'>
           <h1 className='text-4xl md:text-[45px] font-bold text-gray-900 leading-tight'>
             Convierte cualquier imagen en un favicon <span className='text-indigo-600'>fácilmente</span>
           </h1>

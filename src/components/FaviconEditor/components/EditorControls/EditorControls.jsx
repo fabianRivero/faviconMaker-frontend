@@ -43,7 +43,7 @@ export default function EditorControls({ editorState, onStateUpdate }) {
 
         <EditorInput 
           name="Zoom"
-          min="0.5"
+          min="0.1"
           max="3"
           step="0.1"
           value={zoom}
