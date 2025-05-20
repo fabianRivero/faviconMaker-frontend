@@ -2,8 +2,8 @@
 
 FaviconMaker es una aplicación web que te permite crear favicons a partir de imágenes, con opciones de personalización y descarga en múltiples formatos y tamaños.
 
-![Landing Page](/landingpage.png)
-![Dashboard](/FaviconMaker.png)
+![Landing Page](./public/landingpage.png)
+![Dashboard](./public//FaviconMaker.png)
 
 ## Características
 
