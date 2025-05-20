@@ -18,7 +18,7 @@ export default async function generateAndDownloadIco(favicons, getToken) {
       throw new Error('No se pudo obtener el token de autenticación');
     }
 
-    const response = await fetch(`${import.meta.env.BACKEND_URL}/api/ico/generate-ico`, {
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/ico/generate-ico`, {
       method: 'POST',
       body: formData,
       headers: {
