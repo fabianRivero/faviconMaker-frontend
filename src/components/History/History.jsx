@@ -17,7 +17,7 @@ export default function History() {
     setIsLoading(true); 
     try {
       const token = await getToken();
-      const res = await fetch("http://localhost:3001/api/designs", {
+      const res = await fetch(`${import.meta.env.BACKEND_URL}/api/designs`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       const data = await res.json();
@@ -31,7 +31,7 @@ export default function History() {
 
   const deleteDesign = async (id) => {
     const token = await getToken();
-    await fetch(`http://localhost:3001/api/designs/${id}`, {
+    await fetch(`${import.meta.env.BACKEND_URL}/api/designs/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
