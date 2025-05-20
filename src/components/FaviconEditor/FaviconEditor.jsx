@@ -222,7 +222,7 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
       let response;
 
       if (mode === 'overwrite' && designId) {
-        response = await fetch(`http://localhost:3001/api/designs/${designId}`, {
+        response = await fetch(`${import.meta.env.BACKEND_URL}/api/designs/${designId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -231,7 +231,7 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
           body: JSON.stringify(payload)
         });
       } else {
-        response = await fetch('http://localhost:3001/api/designs', {
+        response = await fetch(`${import.meta.env.BACKEND_URL}/api/designs`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
