@@ -150,7 +150,6 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
     const { cropBox, offset, zoom, borderRadius } = editorState;
     
     if (!loadedImage || !loadedImage.complete) {
-      console.warn("Imagen no cargada aún");
       return null;
     }
 
@@ -258,7 +257,6 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
       }));
       
     } catch (error) {
-      console.error('Error al guardar diseño:', error);
       toast.error(error.message || 'Error al guardar el diseño');
     } finally {
       setAppState(prev => ({ ...prev, isSaving: false }));
