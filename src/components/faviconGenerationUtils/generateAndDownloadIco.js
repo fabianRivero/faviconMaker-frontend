@@ -21,6 +21,7 @@ export default async function generateAndDownloadIco(favicons, getToken) {
     const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/ico/generate-ico`, {
       method: 'POST',
       body: formData,
+      credentials: 'include',
       headers: {
         'Authorization': `Bearer ${token}`
       }
