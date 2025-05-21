@@ -5,7 +5,7 @@ export default function ImageUpload({ onImageLoaded }) {
   const [uploadError, setUploadError] = useState(null);
 
   const isValidImage = (file) => {
-    return file && file.type.startsWith('image/') && file.size < 5 * 1024 * 1024; // 5MB max
+    return file && file.type.startsWith('image/') && file.size < 5 * 1024 * 1024;
   };
 
   const handleFile = useCallback((file) => {

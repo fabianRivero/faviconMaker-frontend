@@ -14,12 +14,11 @@ export default function Editor({ onImageUploaded, generatedImage, resetImages })
   const [editorConfig, setEditorConfig] = useState(null);
 
   useEffect(() => {
-    if (location.state?.imageSrc) {
+    if (location.state?.imageSrc && !imageData.img) {
       const img = new Image();
       img.onload = () => {
         setImageData({ img, url: location.state.imageSrc, source: 'state' });
         setStep("edit");
-        onImageUploaded();
         
         if (location.state?.config) {
           setEditorConfig(location.state.config);
@@ -27,10 +26,10 @@ export default function Editor({ onImageUploaded, generatedImage, resetImages })
       };
       img.src = location.state.imageSrc;
     }
-  }, [location.state, onImageUploaded]);
+  }, [location.state]);
 
   useEffect(() => {
-    if (generatedImage) {
+    if (generatedImage && !imageData.img) {
       setImageData({
         img: generatedImage.img,
         url: generatedImage.url,

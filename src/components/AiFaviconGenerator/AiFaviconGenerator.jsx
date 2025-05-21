@@ -21,13 +21,15 @@ export default function AIFaviconGenerator({ onImageLoaded }) {
 
     try {
       const token = await getToken();
-      const response = await fetch("/api/ai/generate-ai-favicon", {
+      const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/ai/generate-ai-favicon`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify({ prompt }),
+        credentials: "include",
+         mode: "cors" 
       });
 
       if (!response.ok) {
@@ -35,10 +37,15 @@ export default function AIFaviconGenerator({ onImageLoaded }) {
         throw new Error(errorData.error || "Error al generar el favicon con IA");
       }
 
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      setImageUrl(url);
-      toast.success("Favicon generado con éxito!");
+    const data = await response.json(); 
+        console.log("Data recibida:", data);
+
+      const fullImageUrl = data.urls.png.startsWith('http') 
+      ? data.urls.png 
+      : `${import.meta.env.VITE_BACKEND_URL}${data.urls.png}`;
+
+    setImageUrl(fullImageUrl); 
+    toast.success("Favicon generado con éxito!");
 
     } catch (error) {
       setError(error.message);

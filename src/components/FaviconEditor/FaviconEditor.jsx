@@ -38,24 +38,8 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
   const location = useLocation();
   const state = location.state || {};
 
-    useEffect(() => {
-    if (appState.loadedImage) {
-      updatePreview();
-    }
-  }, [
-      editorState.cropBox, 
-      editorState.brightness,
-      editorState.saturation,
-      editorState.blur,
-      editorState.invert,
-      editorState.zoom,
-      editorState.offset,
-      editorState.borderRadius,
-      appState.loadedImage
-    ]);
-
   useEffect(() => {
-    if (image) {
+    if (image && !appState.loadedImage) {
       const img = new Image();
       img.onload = () => {
         setAppState(prev => ({ 
@@ -83,7 +67,7 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
       };
       img.src = image.src || image;
     }
-  }, [image, initialConfig, state.config, state.designId, state.description]);
+  }, [image]);
 
   useEffect(() => {
     return () => {
@@ -97,9 +81,30 @@ export default function FaviconEditor({ image, imageURL, goBack: goBackProp, ini
     setEditorState(prev => ({ ...prev, ...updates }));
   };
 
+      useEffect(() => {
+    if (appState.loadedImage) {
+      updatePreview();
+    }
+  }, [
+      editorState.cropBox, 
+      editorState.brightness,
+      editorState.saturation,
+      editorState.blur,
+      editorState.invert,
+      editorState.zoom,
+      editorState.offset,
+      editorState.borderRadius,
+    ]);
+
+
   const updatePreview = () => {
     const preview = getFavicon();
-    setAppState(prev => ({ ...prev, previewImage: preview }));
+        setAppState(prev => {
+      if (prev.previewImage !== preview) {
+        return { ...prev, previewImage: preview };
+      }
+      return prev; 
+        });
   };
 
   const resetInputs = () => {

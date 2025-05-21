@@ -15,7 +15,7 @@ export default function ImageCanvas({ canvasRef, editorState, appState, onStateU
         y: (canvas.height - loadedImageScaledHeight) / 2,
       }
     });
-  }, [loadedImage, zoom]);
+  }, [loadedImage]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
